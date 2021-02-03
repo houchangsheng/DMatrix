@@ -47,3 +47,27 @@ $ make dmatrix\tcm
 $ ./dmatrix\tcm
 ```
 - Note that you can change the configuration of DMatrix\TCM, e.g. the depth, length and width of the sketch.
+
+
+## DMatrix_DBLP and TCM_DBLP
+- Sketch interface for DBLP co-author data
+- We should first split the co-author file by lines
+```
+$ split -l <number> input output_
+```
+
+### Files
+- adaptor.hpp adaptor.cpp: extract stream data from co-author files
+- sketch.hpp. sketch.cpp: the implementation of DMatrix
+- main.cpp\tcm.cpp: the interfaces of query operations in DMatrix\TCM
+
+### Compile and Run
+- Compile with make
+```
+$ make dmatrix\tcm
+```
+- Run the examples, and the program will output some statistics about the accuracy and efficiency. 
+```
+$ ./dmatrix\tcm
+```
+- Note that you can change the configuration of DMatrix\TCM, e.g. the depth, length and width of the sketch.
