@@ -27,10 +27,6 @@ $ ./dmatrix\tcm
 
 ## DMatrix_Twitter and TCM_Twitter
 - Sketch interface for Twitter-Communication data
-- We should first split the Twitter file by lines
-```
-$ split -l <number> input output_
-```
 
 ### Files
 - adaptor.hpp adaptor.cpp: extract stream data from twitter files
@@ -51,10 +47,6 @@ $ ./dmatrix\tcm
 
 ## DMatrix_DBLP and TCM_DBLP
 - Sketch interface for DBLP co-author data
-- We should first split the co-author file by lines
-```
-$ split -l <number> input output_
-```
 
 ### Files
 - adaptor.hpp adaptor.cpp: extract stream data from co-author files
@@ -79,13 +71,13 @@ $ ./dmatrix\tcm
 ### Files
 - /Twitter/reorder.sh: process files to scramble by line
 - /Twitter/replay.py: randomly replay each line of the file
-- /Twitter/pareto_random.py: randomly assign values to twitter edges so that the edge weights meet the Pareto distribution
-- /DBLP/GetAuthors.py: obtain the author information of the papers from the dblp dataset
-- /DBLP/encoded.py: encode the author so that each author corresponds to an ID
+- /Twitter/pareto_random.py: assign value by lines with Pareto distribution
+- /DBLP/GetAuthors.py: obtain the author information
+- /DBLP/encoded.py: encode the authors
 - /DBLP/authors_pair.py: obtain author-pairs
 
 ### Processing Twitter Dataset
-- We first split the Twitter file by lines and take the first 2,400,000 edges
+- Split the Twitter file by lines and take the first 2,400,000 edges
 ```
 $ split -l <number> input output_
 ```
@@ -98,9 +90,13 @@ $ sh ./reorder.sh input output_
 ```
 $ split -l <number> input output_
 ```
-- Run 'pareto_random.py' and randomly assign values by lines so that the edge weights meet the Pareto distribution
+- Run 'pareto_random.py', randomly assign values to twitter edges so that the edge weights meet the Pareto distribution
 
 ### Processing DBLP Dataset
 - Run 'GetAuthors.py' to obtain the author information of papers from the DBLP dataset
 - Run 'encoded.py' to encode the authors' name so that the name corresponds to the ID one by one
-- Extract the author's co-authoring relationship from the author list of papers
+- Run 'authors_pair.py' to extract the author's co-authoring relationship from the author list of papers
+- Split the co-author file by lines
+```
+$ split -l <number> input output_
+```
