@@ -80,20 +80,25 @@ $ ./dmatrix\tcm
 - /Twitter/reorder.sh: process files to scramble by line
 - /Twitter/replay.py: randomly replay each line of the file
 - /Twitter/pareto_random.py: randomly assign values to twitter edges so that the edge weights meet the Pareto distribution
-- /DBLP/GetAuthors.py: 
-- /DBLP/encoded.py: 
-- /DBLP/authors_pair.py: 
+- /DBLP/GetAuthors.py: obtain the author information of the papers from the dblp dataset
+- /DBLP/encoded.py: encode the author so that each author corresponds to an ID
+- /DBLP/authors_pair.py: obtain author-pairs
 
 ### Processing Twitter Dataset
-- Compile with make
+- We first split the Twitter file by lines and take the first 2,400,000 edges
 ```
-$ make dmatrix\tcm
+$ split -l <number> input output_
 ```
-- Run the examples, and the program will output some statistics about the accuracy and efficiency. 
+- Run 'replay.py', randomly replay each edge 1~9 times
+- Scramble file
 ```
-$ ./dmatrix\tcm
+$ sh ./reorder.sh input output_
 ```
-- Note that you can change the configuration of DMatrix\TCM, e.g. the depth, length and width of the sketch.
+- Split the Twitter file by lines and divide it into 5 parts evenly
+```
+$ split -l <number> input output_
+```
+- Run 'pareto_random.py' and randomly assign values by lines so that the edge weights meet the Pareto distribution
 
 ### Processing DBLP Dataset
 - Compile with make
