@@ -1,5 +1,5 @@
 # DMatrix
-- Toward Fast and Accurate Queries in Graph Stream Summarization
+- DMatrix: Toward Fast and Accurate Queries in Graph Stream
 
 ## DMatrix_IPtrace and TCM_IPtrace
 - Sketch interface for IP-Trace data
