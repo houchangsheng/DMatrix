@@ -101,12 +101,6 @@ $ split -l <number> input output_
 - Run 'pareto_random.py' and randomly assign values by lines so that the edge weights meet the Pareto distribution
 
 ### Processing DBLP Dataset
-- Compile with make
-```
-$ make dmatrix\tcm
-```
-- Run the examples, and the program will output some statistics about the accuracy and efficiency. 
-```
-$ ./dmatrix\tcm
-```
-- Note that you can change the configuration of DMatrix\TCM, e.g. the depth, length and width of the sketch.
+- Run 'GetAuthors.py' to obtain the author information of papers from the DBLP dataset
+- Run 'encoded.py' to encode the authors' name so that the name corresponds to the ID one by one
+- Extract the author's co-authoring relationship from the author list of papers
