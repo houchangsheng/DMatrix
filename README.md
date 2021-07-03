@@ -71,3 +71,37 @@ $ make dmatrix\tcm
 $ ./dmatrix\tcm
 ```
 - Note that you can change the configuration of DMatrix\TCM, e.g. the depth, length and width of the sketch.
+
+
+## Dataset processing
+- Programs for processing datasets
+
+### Files
+- /Twitter/reorder.sh: process files to scramble by line
+- /Twitter/replay.py: randomly replay each line of the file
+- /Twitter/pareto_random.py: randomly assign values to twitter edges so that the edge weights meet the Pareto distribution
+- /DBLP/GetAuthors.py: 
+- /DBLP/encoded.py: 
+- /DBLP/authors_pair.py: 
+
+### Processing Twitter Dataset
+- Compile with make
+```
+$ make dmatrix\tcm
+```
+- Run the examples, and the program will output some statistics about the accuracy and efficiency. 
+```
+$ ./dmatrix\tcm
+```
+- Note that you can change the configuration of DMatrix\TCM, e.g. the depth, length and width of the sketch.
+
+### Processing DBLP Dataset
+- Compile with make
+```
+$ make dmatrix\tcm
+```
+- Run the examples, and the program will output some statistics about the accuracy and efficiency. 
+```
+$ ./dmatrix\tcm
+```
+- Note that you can change the configuration of DMatrix\TCM, e.g. the depth, length and width of the sketch.
