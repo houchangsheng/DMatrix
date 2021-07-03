@@ -71,7 +71,7 @@ $ ./dmatrix\tcm
 ### Files
 - /Twitter/reorder.sh: process files to scramble by line
 - /Twitter/replay.py: randomly replay each line of the file
-- /Twitter/pareto_random.py: assign value by lines with Pareto distribution
+- /Twitter/pareto_random.py: assign values by lines with Pareto distribution
 - /DBLP/GetAuthors.py: obtain the author information
 - /DBLP/encoded.py: encode the authors
 - /DBLP/authors_pair.py: obtain author-pairs
@@ -86,7 +86,7 @@ $ split -l <number> input output_
 ```
 $ sh ./reorder.sh input output_
 ```
-- Split the Twitter file by lines and divide it into 5 parts evenly
+- Split the Twitter file by lines and divide it into five parts evenly
 ```
 $ split -l <number> input output_
 ```
@@ -94,7 +94,7 @@ $ split -l <number> input output_
 
 ### Processing DBLP Dataset
 - Run 'GetAuthors.py' to obtain the author information of papers from the DBLP dataset
-- Run 'encoded.py' to encode the authors' name so that the name corresponds to the ID one by one
+- Run 'encoded.py' to encode the authors' name so that the names corresponds to the IDs one by one
 - Run 'authors_pair.py' to extract the author's co-authoring relationship from the author list of papers
 - Split the co-author file by lines
 ```
